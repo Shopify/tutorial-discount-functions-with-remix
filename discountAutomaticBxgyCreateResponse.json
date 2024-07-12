@@ -1,0 +1,16 @@
+{
+  "data": {
+    "discountAutomaticBxgyCreate": {
+      "userErrors": [],
+      "automaticDiscountNode": {
+        // Note the ID as you'll use it for updating the mutation in the next step.
+        "id": "gid://shopify/DiscountAutomaticNode/3",
+        "automaticDiscount": {
+          "title": "BXGY discount test",
+          "summary": "Buy 1 item, get 1 item free",
+          "status": "ACTIVE"
+        }
+      }
+    }
+  }
+}
