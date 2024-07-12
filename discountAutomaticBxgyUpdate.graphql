@@ -1,0 +1,54 @@
+mutation {
+  # Replace the discount automatic node ID with the ID that you retrieved in the first step
+  discountAutomaticBxgyUpdate(
+    id: "gid://shopify/DiscountAutomaticNode/3"
+    automaticBxgyDiscount: {
+      title: "BXGY discount update test"
+      customerBuys: {
+        value: { quantity: "1" }
+        items: {
+          products: {
+            # Replace these product IDs with new products
+            productsToAdd: [
+              "gid://shopify/Product/2"
+              "gid://shopify/Product/3"
+            ]
+            # Replace this product ID with the product ID that you used in the first step
+            productsToRemove: ["gid://shopify/Product/1"]
+          }
+        }
+      }
+      customerGets: {
+        value: {
+          discountOnQuantity: { quantity: "1", effect: { percentage: 1.00 } }
+        }
+        items: {
+          products: {
+            # Replace these product IDs with new products
+            productsToAdd: [
+              "gid://shopify/Product/2"
+              "gid://shopify/Product/3"
+            ]
+            # Replace this product ID with the product ID that you used in the first step
+            productsToRemove: ["gid://shopify/Product/1"]
+          }
+        }
+      }
+    }
+  ) {
+    userErrors {
+      field
+      message
+      code
+    }
+    automaticDiscountNode {
+      automaticDiscount {
+        ... on DiscountAutomaticBxgy {
+          title
+          summary
+          status
+        }
+      }
+    }
+  }
+}
