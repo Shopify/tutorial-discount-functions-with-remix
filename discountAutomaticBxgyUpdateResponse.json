@@ -1,0 +1,14 @@
+{
+  "data": {
+    "discountAutomaticBxgyUpdate": {
+      "userErrors": [],
+      "automaticDiscountNode": {
+        "automaticDiscount": {
+          "title": "BXGY discount update test",
+          "summary": "Buy 1 item, get 1 item free",
+          "status": "ACTIVE"
+        }
+      }
+    }
+  }
+}
