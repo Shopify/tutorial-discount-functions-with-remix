@@ -1,0 +1,60 @@
+mutation {
+  discountAutomaticBxgyCreate(
+    automaticBxgyDiscount: {
+      title: "BXGY discount test"
+      startsAt: "2022-01-01"
+      endsAt: "2024-04-18T02:38:45Z"
+      usesPerOrderLimit: "1"
+      customerBuys: {
+        value: {
+          # Accepts quantity or amount
+          quantity: "1"
+        }
+        items: {
+          # If you want a customer to get a discount regardless of the item that they
+          # purchase, then set the `customerBuys.items.all` to `true` instead of a
+          # specific product.
+          products: {
+            # Replace this product ID with the ID for a product in your store
+            productsToAdd: ["gid://shopify/Product/1"]
+          }
+        }
+      }
+      customerGets: {
+        value: {
+          discountOnQuantity: {
+            quantity: "1"
+            effect: {
+              # Change `percentage` to offer a different discount amount
+              percentage: 1.00
+            }
+          }
+        }
+        items: {
+          # If you want to apply the discount to all items, then use
+          # `customerGets.items.all` instead of a specific product ID.
+          products: {
+            # Replace this product ID with the ID for a product in your store
+            productsToAdd: ["gid://shopify/Product/1"]
+          }
+        }
+      }
+    }
+  ) {
+    userErrors {
+      field
+      message
+      code
+    }
+    automaticDiscountNode {
+      id
+      automaticDiscount {
+        ... on DiscountAutomaticBxgy {
+          title
+          summary
+          status
+        }
+      }
+    }
+  }
+}
