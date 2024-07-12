@@ -1,0 +1,16 @@
+{
+  automaticDiscountNodes(first: 3) {
+    edges {
+      node {
+        id
+        automaticDiscount {
+          __typename
+          ... on DiscountAutomaticBxgy {
+            status
+            title
+          }
+        }
+      }
+    }
+  }
+}
