@@ -7,17 +7,20 @@ mutation {
       usesPerOrderLimit: "1"
       customerBuys: {
         value: {
-          # Accepts quantity or amount
+          // [START quantity-or-amount]
           quantity: "1"
+          // [END quantity-or-amount]
+
         }
         items: {
           # If you want a customer to get a discount regardless of the item that they
           # purchase, then set the `customerBuys.items.all` to `true` instead of a
           # specific product.
+          // [START product-id]
           products: {
-            # Replace this product ID with the ID for a product in your store
             productsToAdd: ["gid://shopify/Product/1"]
           }
+          // [END product-id]
         }
       }
       customerGets: {
