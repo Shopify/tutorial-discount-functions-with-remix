@@ -1,3 +1,4 @@
+#[START build-a-discount.discount-automatic-bxgy-nodes-query]
 {
   automaticDiscountNodes(first: 3) {
     edges {
@@ -14,3 +15,4 @@
     }
   }
 }
+#[END build-a-discount.discount-automatic-bxgy-nodes-query]
