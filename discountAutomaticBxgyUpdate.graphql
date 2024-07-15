@@ -1,20 +1,23 @@
 mutation {
-  # Replace the discount automatic node ID with the ID that you retrieved in the first step
   discountAutomaticBxgyUpdate(
+    # [START build-a-discount.discount-automatic-node-id]
     id: "gid://shopify/DiscountAutomaticNode/3"
+    # [END build-a-discount.discount-automatic-node-id]
     automaticBxgyDiscount: {
       title: "BXGY discount update test"
       customerBuys: {
         value: { quantity: "1" }
         items: {
           products: {
-            # Replace these product IDs with new products
+            # [START build-a-discount.add-product-id-buys]
             productsToAdd: [
               "gid://shopify/Product/2"
               "gid://shopify/Product/3"
             ]
-            # Replace this product ID with the product ID that you used in the first step
+            # [END build-a-discount.add-product-id-buys]
+            # [START build-a-discount.remove-product-id-buys]
             productsToRemove: ["gid://shopify/Product/1"]
+            # [END build-a-discount.remove-product-id-buys]
           }
         }
       }
@@ -24,13 +27,15 @@ mutation {
         }
         items: {
           products: {
-            # Replace these product IDs with new products
+            # [START build-a-discount.add-product-id-gets]]
             productsToAdd: [
               "gid://shopify/Product/2"
               "gid://shopify/Product/3"
             ]
-            # Replace this product ID with the product ID that you used in the first step
+            # [END build-a-discount.add-product-id-gets]
+            # [START build-a-discount.remove-product-id-gets]
             productsToRemove: ["gid://shopify/Product/1"]
+            # [END build-a-discount.remove-product-id-gets]
           }
         }
       }
