@@ -12,19 +12,19 @@ mutation {
       }
       # [END build-a-discount.product-id-buys]
       customerGets: {
+        # [START build-a-discount.percentage]
         value: {
           discountOnQuantity: {
             quantity: "1"
-            # [START build-a-discount.percentage]
             effect: { percentage: 1.00 }
-            # [END build-a-discount.percentage]
           }
         }
+        # [END build-a-discount.percentage]
+        # [START build-a-discount.product-id-gets]
         items: {
-          # [START build-a-discount.product-id-gets]
           products: { productsToAdd: ["gid://shopify/Product/1"] }
-          # [END build-a-discount.product-id-gets]
         }
+        # [END build-a-discount.product-id-gets]
       }
     }
   ) {
