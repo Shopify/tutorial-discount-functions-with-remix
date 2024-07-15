@@ -28,7 +28,7 @@ mutation {
         }
         items: {
           products: {
-            # [START build-a-discount.add-product-id-gets]]
+            # [START build-a-discount.add-product-id-gets]
             productsToAdd: [
               "gid://shopify/Product/2"
               "gid://shopify/Product/3"
