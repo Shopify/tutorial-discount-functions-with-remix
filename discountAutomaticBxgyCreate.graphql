@@ -7,11 +7,11 @@ mutation {
       endsAt: "2024-04-18T02:38:45Z"
       usesPerOrderLimit: "1"
       customerBuys: {
+        # [START build-a-discount.quantity-or-amount]
         value: {
-          # [START build-a-discount.quantity-or-amount]
           quantity: "1"
-          # [END build-a-discount.quantity-or-amount]
         }
+        # [END build-a-discount.quantity-or-amount]
         items: {
           # [START build-a-discount.product-id-buys]
           products: { productsToAdd: ["gid://shopify/Product/1"] }
