@@ -6,34 +6,26 @@ mutation {
       endsAt: "2024-04-18T02:38:45Z"
       usesPerOrderLimit: "1"
       customerBuys: {
-        value: {
-          # [START build-a-discount.quantity-or-amount]
-          quantity: "1"
-          # [END build-a-discount.quantity-or-amount]
-        }
-        items: {
-          # [START build-a-discount.product-id-buys]
-          products: { productsToAdd: ["gid://shopify/Product/1"] }
-          # [END build-a-discount.product-id-buys]
-        }
+        # [START build-a-discount.quantity-or-amount]
+        value: { quantity: "1" }
+        # [END build-a-discount.quantity-or-amount]
+        # [START build-a-discount.product-id-buys]
+        items: { products: { productsToAdd: ["gid://shopify/Product/1"] } }
+        # [END build-a-discount.product-id-buys]
       }
       customerGets: {
         value: {
           discountOnQuantity: {
             quantity: "1"
-            effect: {
-              # [START build-a-discount.percentage]
-              percentage: 1.00
-              # [END build-a-discount.percentage]
-            }
+            # [START build-a-discount.percentage]
+            effect: { percentage: 1.00 }
+            # [END build-a-discount.percentage]
           }
         }
         items: {
-          products: {
-            # [START build-a-discount.product-id-gets]
-            productsToAdd: ["gid://shopify/Product/1"]
-            # [END build-a-discount.product-id-gets]
-          }
+          # [START build-a-discount.product-id-gets]
+          products: { productsToAdd: ["gid://shopify/Product/1"] }
+          # [END build-a-discount.product-id-gets]
         }
       }
     }
