@@ -12,6 +12,9 @@ mutation {
         # [START build-a-discount.product-id-buys]
         items: { products: { productsToAdd: ["gid://shopify/Product/1"] } }
         # [END build-a-discount.product-id-buys]
+        # [START build-a-discount.product-id-buys-all]
+        # items: all
+        # [END build-a-discount.product-id-buys-all]
       }
       customerGets: {
         value: {
@@ -27,6 +30,9 @@ mutation {
           products: { productsToAdd: ["gid://shopify/Product/1"] }
           # [END build-a-discount.product-id-gets]
         }
+        # [START build-a-discount.product-id-gets-all]
+        # items: all
+        # [END build-a-discount.product-id-gets-all]
       }
     }
   ) {
