@@ -3,8 +3,9 @@
     "discountAutomaticBxgyCreate": {
       "userErrors": [],
       "automaticDiscountNode": {
-        // Note the ID as you'll use it for updating the mutation in the next step.
+        // [START note-the-id]
         "id": "gid://shopify/DiscountAutomaticNode/3",
+        // [END note-the-id]
         "automaticDiscount": {
           "title": "BXGY discount test",
           "summary": "Buy 1 item, get 1 item free",
