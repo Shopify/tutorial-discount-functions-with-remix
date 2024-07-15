@@ -1,3 +1,4 @@
+// [START build-a-discount.discountAutomaticNodesQueryResponse]
 {
   "data": {
     "automaticDiscountNodes": {
@@ -36,3 +37,4 @@
     }
   }
 }
+// [END build-a-discount.discountAutomaticNodesQueryResponse]

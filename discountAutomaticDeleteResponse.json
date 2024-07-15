@@ -1,3 +1,4 @@
+// [START build-a-discount.discountAutomaticDeleteResponse]
 {
   "data": {
     "discountAutomaticDelete": {
@@ -6,3 +7,4 @@
     }
   }
 }
+// [END build-a-discount.discountAutomaticDeleteResponse]

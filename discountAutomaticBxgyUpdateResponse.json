@@ -1,3 +1,5 @@
+// [START build-a-discount.discountAutomaticBxgyUpdateResponse]
+
 {
   "data": {
     "discountAutomaticBxgyUpdate": {
@@ -12,3 +14,4 @@
     }
   }
 }
+// [END build-a-discount.discountAutomaticBxgyUpdateResponse]
