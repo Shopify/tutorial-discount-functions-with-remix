@@ -1,5 +1,5 @@
-# [START build-a-discount.discount-automatic-bxgy-create]
 mutation {
+  # [START build-a-discount.discount-automatic-bxgy-create]
   discountAutomaticBxgyCreate(
     automaticBxgyDiscount: {
       title: "BXGY discount test"
@@ -55,5 +55,5 @@ mutation {
       }
     }
   }
+  # [END build-a-discount.discount-automatic-bxgy-create]
 }
-# [END build-a-discount.discount-automatic-bxgy-create]

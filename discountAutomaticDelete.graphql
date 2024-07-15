@@ -1,3 +1,4 @@
+# [START build-a-discount.discount-automatic-delete]
 mutation {
   discountAutomaticDelete(id: "gid://shopify/DiscountAutomaticNode/3") {
     deletedAutomaticDiscountId
@@ -8,3 +9,4 @@ mutation {
     }
   }
 }
+# [END build-a-discount.discount-automatic-delete]
