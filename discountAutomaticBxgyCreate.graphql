@@ -1,3 +1,4 @@
+# [START build-a-discount.discount-automatic-bxgy-create]
 mutation {
   discountAutomaticBxgyCreate(
     automaticBxgyDiscount: {
@@ -55,3 +56,4 @@ mutation {
     }
   }
 }
+# [END build-a-discount.discount-automatic-bxgy-create]
