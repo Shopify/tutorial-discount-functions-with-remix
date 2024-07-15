@@ -1,4 +1,4 @@
-# [START build-a-discount.update-bxgy-discount]
+# [START build-a-discount.discount-automatic-bxgy-update]
 mutation {
   discountAutomaticBxgyUpdate(
     # [START build-a-discount.discount-automatic-node-id]
@@ -58,4 +58,4 @@ mutation {
     }
   }
 }
-# [END build-a-discount.update-bxgy-discount]
+# [END build-a-discount.discount-automatic-bxgy-update]
