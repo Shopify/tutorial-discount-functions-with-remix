@@ -1,4 +1,5 @@
 mutation {
+  # [START build-a-discount.product-id-buys]
   discountAutomaticBxgyCreate(
     automaticBxgyDiscount: {
       title: "BXGY discount test"
@@ -6,10 +7,7 @@ mutation {
       endsAt: "2024-04-18T02:38:45Z"
       usesPerOrderLimit: "1"
       customerBuys: {
-        # [START build-a-discount.quantity-or-amount]
         value: { quantity: "1" }
-        # [END build-a-discount.quantity-or-amount]
-        # [START build-a-discount.product-id-buys]
         items: { products: { productsToAdd: ["gid://shopify/Product/1"] } }
         # [END build-a-discount.product-id-buys]
         # [START build-a-discount.product-id-buys-all]
