@@ -1,3 +1,4 @@
+# [START build-a-discount.discount-automatic-bxgy-create]
 mutation {
   discountAutomaticBxgyCreate(
     automaticBxgyDiscount: {
@@ -5,21 +6,36 @@ mutation {
       startsAt: "2022-01-01"
       endsAt: "2024-04-18T02:38:45Z"
       usesPerOrderLimit: "1"
-      # [START build-a-discount.product-id-buys]
       customerBuys: {
-        value: { quantity: "1" }
-        items: { products: { productsToAdd: ["gid://shopify/Product/1"] } }
-      }
-      # [END build-a-discount.product-id-buys]
-      customerGets: {
-        # [START build-a-discount.percentage]
         value: {
-          discountOnQuantity: { quantity: "1", effect: { percentage: 1.00 } }
+          # [START build-a-discount.quantity-or-amount]
+          quantity: "1"
+          # [END build-a-discount.quantity-or-amount]
         }
-        # [END build-a-discount.percentage]
-        # [START build-a-discount.product-id-gets]
-        items: { products: { productsToAdd: ["gid://shopify/Product/1"] } }
-        # [END build-a-discount.product-id-gets]
+        items: {
+          # [START build-a-discount.product-id-buys]
+          products: { productsToAdd: ["gid://shopify/Product/1"] }
+          # [END build-a-discount.product-id-buys]
+        }
+      }
+      customerGets: {
+        value: {
+          discountOnQuantity: {
+            quantity: "1"
+            effect: {
+              # [START build-a-discount.percentage]
+              percentage: 1.00
+              # [END build-a-discount.percentage]
+            }
+          }
+        }
+        items: {
+          products: {
+            # [START build-a-discount.product-id-gets]
+            productsToAdd: ["gid://shopify/Product/1"]
+            # [END build-a-discount.product-id-gets]
+          }
+        }
       }
     }
   ) {
@@ -40,4 +56,4 @@ mutation {
     }
   }
 }
-# asdfasdfsfds
+# [END build-a-discount.discount-automatic-bxgy-create]
