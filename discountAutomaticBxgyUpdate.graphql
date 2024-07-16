@@ -10,15 +10,13 @@ mutation {
         value: { quantity: "1" }
         items: {
           products: {
-            # [START build-a-discount.add-product-id-buys]
+            # [START build-a-discount.add-remove-product-id-buys]
             productsToAdd: [
               "gid://shopify/Product/2"
               "gid://shopify/Product/3"
             ]
-            # [END build-a-discount.add-product-id-buys]
-            # [START build-a-discount.remove-product-id-buys]
             productsToRemove: ["gid://shopify/Product/1"]
-            # [END build-a-discount.remove-product-id-buys]
+            # [END build-a-discount.add-remove-product-id-buys]
           }
         }
       }
@@ -28,15 +26,13 @@ mutation {
         }
         items: {
           products: {
-            # [START build-a-discount.add-product-id-gets]
+            # [START build-a-discount.add-remove-product-id-gets]
             productsToAdd: [
               "gid://shopify/Product/2"
               "gid://shopify/Product/3"
             ]
-            # [END build-a-discount.add-product-id-gets]
-            # [START build-a-discount.remove-product-id-gets]
             productsToRemove: ["gid://shopify/Product/1"]
-            # [END build-a-discount.remove-product-id-gets]
+            # [END build-a-discount.add-remove-product-id-gets]
           }
         }
       }
