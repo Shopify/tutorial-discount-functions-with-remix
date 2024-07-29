@@ -1,24 +1,29 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "3ee51642ab474fa9e60024fe0c94f34d"
-name = "build-a-discount-function-with-remix"
-handle = "build-a-discount-function-with-remix"
-application_url = "https://shopify.dev/apps/default-app-home"
+client_id = "7e1ce6ae588ac87953ac011795fbecb9"
+name = "build-a-discount-function"
+handle = "build-a-discount-function"
+application_url = "https://vbulletin-lender-pe-microwave.trycloudflare.com"
 embedded = true
 
 [build]
+automatically_update_urls_on_dev = true
+dev_store_url = "quickstart-3a22a586.myshopify.com"
 include_config_on_deploy = true
 
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [
+  "https://vbulletin-lender-pe-microwave.trycloudflare.com/auth/callback",
+  "https://vbulletin-lender-pe-microwave.trycloudflare.com/auth/shopify/callback",
+  "https://vbulletin-lender-pe-microwave.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-07"
 
 [pos]
 embedded = false
-
-# [START discount-allocator.access_scopes]
-[access_scopes]
-scopes = "write_products, write_discounts, write_discounts_allocator_functions, read_products"
-# [END discount-allocator.access_scopes]
