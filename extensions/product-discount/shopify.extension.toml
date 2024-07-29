@@ -1,0 +1,24 @@
+api_version = "2024-07"
+
+[[extensions]]
+name = "t:name"
+handle = "product-discount"
+type = "function"
+
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "purchase.product-discount.run"
+  input_query = "src/run.graphql"
+  export = "run"
+
+  [extensions.build]
+  command = "cargo wasi build --release"
+  path = "target/wasm32-wasi/release/product-discount.wasm"
+  watch = [ "src/**/*.rs" ]
+
+  # [START build-the-ui.add-ui-path]
+  [extensions.ui.paths]
+  create = "/app/volume-discount/:functionId/new"
+  details = "/app/volume-discount/:functionId/:id"
+  # [END build-the-ui.add-ui-path]

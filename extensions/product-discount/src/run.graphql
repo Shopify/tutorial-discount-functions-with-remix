@@ -1,0 +1,18 @@
+query Input {
+  cart {
+    lines {
+      id
+      quantity
+    }
+  }
+  # [START build-the-ui.use-namespace]
+  discountNode {
+    metafield(
+      namespace: "$app:volume-discount"
+      key: "function-configuration"
+    ) {
+      value
+    }
+  }
+  # [END build-the-ui.use-namespace]
+}

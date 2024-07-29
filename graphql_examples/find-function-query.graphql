@@ -1,0 +1,14 @@
+# [START find-function-query]
+query {
+  shopifyFunctions(first: 25) {
+    nodes {
+      app {
+        title
+      }
+      apiType
+      title
+      id
+    }
+  }
+}
+# [END find-function-query]

@@ -1,0 +1,27 @@
+# [START discount-allocator.single-cap-discount-metafield-mutation]
+mutation {
+  metafieldsSet(metafields: [
+    {
+      key: "single-discount-cap",
+      namespace: "testing-app-allocator",
+      ownerId: "gid://shopify/DiscountNode/<DISCOUNT_ID>",
+      type: "number_decimal",
+      value: "<SINGLE_DISCOUNT_CAP>"
+    }
+  ]) {
+    metafields {
+      key
+      namespace
+      value
+      createdAt
+      updatedAt
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+# [END discount-allocator.single-cap-discount-metafield-mutation]
+

@@ -1,0 +1,24 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "3ee51642ab474fa9e60024fe0c94f34d"
+name = "discount-function-examples"
+handle = "discount-function-examples"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+
+[auth]
+redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false
+
+# [START discount-allocator.access_scopes]
+[access_scopes]
+scopes = "write_products, write_discounts, write_discounts_allocator_functions, read_products"
+# [END discount-allocator.access_scopes]

@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "939b9b780df965979eb7f39277111616"
+name = "shahriars-testing-app"
+handle = "shahriars-testing-app"
+application_url = "https://nevertheless-optical-enhancement-entitled.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "shahriars-test-store.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_discounts,read_products,write_discounts"
+
+[auth]
+redirect_urls = [
+  "https://nevertheless-optical-enhancement-entitled.trycloudflare.com/auth/callback",
+  "https://nevertheless-optical-enhancement-entitled.trycloudflare.com/auth/shopify/callback",
+  "https://nevertheless-optical-enhancement-entitled.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

@@ -1,0 +1,21 @@
+# [START discount-automatic-app-create]
+mutation {
+  discountAutomaticAppCreate(
+    automaticAppDiscount: {
+      title: "Volume discount"
+      # [START discount-automatic-app-create.add-function-id]
+      functionId: "YOUR_FUNCTION_ID_HERE"
+      # [END discount-automatic-app-create.add-function-id]
+      startsAt: "2022-06-22T00:00:00"
+    }
+  ) {
+    automaticAppDiscount {
+      discountId
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+# [END discount-automatic-app-create]

@@ -1,0 +1,28 @@
+# [START discounts-allocator.discount-metafield-defination-configuration]
+mutation {
+  metafieldDefinitionCreate(definition: {
+    name: "Single discount Cap",
+    namespace: "testing-app-allocator",
+    key: "single-discount-cap",
+    type: "number_decimal",
+    description: "Maximum reduction value for a single discount",
+    validations: [
+      {
+        name: "min",
+        value: "0"
+      }
+    ],
+    ownerType: "DISCOUNT"
+  }) {
+    createdDefinition {
+      id
+      name
+    }
+    userErrors {
+      field
+      message
+      code
+    }
+  }
+}
+# [END discounts-allocator.discount-metafield-defination-configuration]

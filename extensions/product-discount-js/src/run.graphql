@@ -1,0 +1,15 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+    }
+  }
+  # [START build-the-ui.use-namespace]
+  discountNode {
+    metafield(namespace: "volume-discount", key: "function-configuration") {
+      value
+    }
+  }
+  # [END build-the-ui.use-namespace]
+}

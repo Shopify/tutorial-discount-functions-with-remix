@@ -1,0 +1,10 @@
+# [START product-discount.configuration]
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+    }
+  }
+}
+# [END product-discount.configuration]

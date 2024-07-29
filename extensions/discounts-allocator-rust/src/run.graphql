@@ -1,0 +1,60 @@
+# [START discounts-allocator.run-graphql-configuration]
+query Input {
+  discounts {
+    id
+    title
+    code
+    discountApplicationStrategy
+    discountProposals
+    {
+      handle
+      message
+      value {
+        __typename
+        ... on FixedAmount {
+          amount
+          appliesToEachItem
+        }
+        ... on Percentage {
+          value
+        }
+      }
+      targets{
+        cartLineId
+        quantity
+      }
+    }
+    metafield(namespace: "testing-app-allocator", key: "single-discount-cap") {
+      value
+    }
+  }
+  presentmentCurrencyRate
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+        }
+      }
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          title
+          product {
+            id
+            title
+          }
+        }
+      }
+    }
+  }
+  shop {
+    metafield(namespace: "testing-app-allocator", key: "per-cart-cap") {
+      value
+    }
+  }
+}
+# [END discounts-allocator.run-graphql-configuration]

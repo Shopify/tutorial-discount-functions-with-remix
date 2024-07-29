@@ -1,0 +1,12 @@
+# [START order-discount.configuration]
+query Input {
+  discountNode {
+    metafield(
+      namespace: "$app:minimum-subtotal"
+      key: "function-configuration"
+    ) {
+      value
+    }
+  }
+}
+# [END order-discount.configuration]
