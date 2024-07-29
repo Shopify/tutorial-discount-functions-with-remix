@@ -1,8 +1,0 @@
-{
-  "app": {
-    "title": "your-app-name-here"
-  },
-  "apiType": "product_discounts",
-  "title": "product-discount",
-  "id": "YOUR_FUNCTION_ID_HERE"
-}
