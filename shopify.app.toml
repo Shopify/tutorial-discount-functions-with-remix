@@ -1,8 +1,8 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "3ee51642ab474fa9e60024fe0c94f34d"
-name = "discount-function-examples"
-handle = "discount-function-examples"
+name = "build-a-discount-function-with-remix"
+handle = "build-a-discount-function-with-remix"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 

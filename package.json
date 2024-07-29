@@ -1,5 +1,5 @@
 {
-  "name": "discount-function-examples",
+  "name": "build-a-discount-function-with-remix",
   "private": true,
   "scripts": {
     "build": "remix vite:build",

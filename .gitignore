@@ -16,4 +16,4 @@ yarn.lock
 
 /extensions/*/dist
 *.env*
-shopify.app.discount-function-examples.toml
+shopify.app.build-a-discount-function-with-remix.toml
