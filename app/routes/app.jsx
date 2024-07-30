@@ -1,6 +1,6 @@
 import { json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
-import polarisStyles from "@shopify/polaris/build/esm/styles.css";
+import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 // [START build-the-ui.render-the-provider]\
 import { DiscountProvider } from "../components/DiscountProvider";
 // [END build-the-ui.render-the-provider]
