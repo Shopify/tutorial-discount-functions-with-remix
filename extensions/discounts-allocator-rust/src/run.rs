@@ -6,32 +6,32 @@ use shopify_function::Result;
 const TOTAL_DISCOUNTS_CAP_REACHED: &str = "Maximum discount limit reached for this cart";
 const SINGLE_DISCOUNT_CAP_REACHED: &str = "Maximum discount limit reached for this discount";
 
-// [START discounts-allocator.helper-functions]
-// Helper function to extract the line index from a target's cartLineId
-fn get_target_line_index(target: &input::InputDiscountsDiscountProposalsTargets) -> usize {
-    target
-        .cart_line_id
-        .chars()
-        .last()
-        .unwrap()
-        .to_digit(10)
-        .unwrap() as usize
-}
-
-// Helper function to calculate the price for a specific target based on its quantity
-fn calculate_current_target_price(
-    input_cart_lines: &Vec<input::InputCartLines>,
-    target: &input::InputDiscountsDiscountProposalsTargets,
-) -> f64 {
-    let target_line_index = get_target_line_index(target);
-    let target_line = &input_cart_lines[target_line_index];
-    f64::from(target_line.cost.amount_per_quantity.amount) * target.quantity as f64
-}
-// [END discounts-allocator.helper-functions]
-
 // [START discounts-allocator.run-entrypoint]
 #[shopify_function_target(query_path = "src/run.graphql", schema_path = "schema.graphql")]
 fn run(input: input::ResponseData) -> Result<output::FunctionRunResult> {
+
+    // [START discounts-allocator.helper-functions]
+    // Helper function to extract the line index from a target's cartLineId
+    fn get_target_line_index(target: &input::InputDiscountsDiscountProposalsTargets) -> usize {
+      target
+          .cart_line_id
+          .chars()
+          .last()
+          .unwrap()
+          .to_digit(10)
+          .unwrap() as usize
+    }
+
+    // Helper function to calculate the price for a specific target based on its quantity
+    fn calculate_current_target_price(
+      input_cart_lines: &Vec<input::InputCartLines>,
+      target: &input::InputDiscountsDiscountProposalsTargets,
+    ) -> f64 {
+      let target_line_index = get_target_line_index(target);
+      let target_line = &input_cart_lines[target_line_index];
+      f64::from(target_line.cost.amount_per_quantity.amount) * target.quantity as f64
+    }
+    // [END discounts-allocator.helper-functions]
     // Parse the total discounts cap from the shop's metafield
     let total_discounts_cap: f64 = input
         .shop
