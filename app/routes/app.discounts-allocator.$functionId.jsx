@@ -1,11 +1,13 @@
 // [START discounts-allocator.ui-configuration]
-import {useEffect} from 'react';
-import {json} from '@remix-run/node';
-import {useActionData, useNavigate, useSubmit} from '@remix-run/react';
-import {Page, Layout, BlockStack, Card, Banner, Text} from '@shopify/polaris';
-import {authenticate} from '../shopify.server';
+import { useEffect } from "react";
+import { json } from "@remix-run/node";
+import { useActionData, useNavigate, useSubmit } from "@remix-run/react";
+import { Page, Layout, BlockStack, Card, Banner, Text } from "@shopify/polaris";
+import { authenticate } from "../shopify.server";
 
-export const action = async ({params, request}) => {
+export const action = async ({ params, request }) => {
+  const functionExtensionId = params.functionId;
+
   const registerDiscountsAllocatorMutation = `
     #graphql
       mutation registerDiscountsAllocator($functionExtensionId: String!) {
@@ -19,11 +21,8 @@ export const action = async ({params, request}) => {
       }
     `;
 
-  const formData = await request.formData();
-  const functionExtensionId = formData.get('functionExtensionId');
-
   if (functionExtensionId !== null) {
-    const {admin} = await authenticate.admin(request);
+    const { admin } = await authenticate.admin(request);
 
     const response = await admin.graphql(registerDiscountsAllocatorMutation, {
       variables: {
@@ -34,12 +33,11 @@ export const action = async ({params, request}) => {
     const responseJson = await response.json();
     const errors =
       responseJson.data.discountsAllocatorFunctionRegister?.userErrors;
-    return json({errors});
+    return json({ errors });
   }
 
-  return json({errors: ['No functionExtensionId provided']});
+  return json({ errors: ["No functionExtensionId provided"] });
 };
-
 
 export default function DiscountsAllocator() {
   const actionData = useActionData();
@@ -50,7 +48,7 @@ export default function DiscountsAllocator() {
   useEffect(() => {
     if (actionData?.errors && actionData?.errors.length === 0) {
       shopify.toast.show(
-        'Discounts Allocator Function registered successfully!',
+        "Discounts Allocator Function registered successfully!",
       );
     }
   }, [actionData]);
@@ -72,26 +70,24 @@ export default function DiscountsAllocator() {
 
   const actions = {
     backAction: {
-      content: 'Home',
-      onAction: () => navigate('/app'),
+      content: "Home",
+      onAction: () => navigate("/app"),
     },
     primaryAction: {
-      content: 'Register Discounts allocator',
-      onAction: () => submitForm({}, {method: 'post'}),
-    }
-  }
+      content: "Register Discounts allocator",
+      onAction: () => submitForm({}, { method: "post" }),
+    },
+  };
 
   return (
-    <Page
-      title="Register Discounts Allocator Function"
-      {...actions}
-    >
+    <Page title="Register Discounts Allocator Function" {...actions}>
       <BlockStack gap="500">
         <Layout>
           <Layout.Section>
             <Card>
               <Text as="h2" variant="bodyMd">
-                Add more awesome details about your allocator here! (Like ability to add metafields)
+                Add more awesome details about your allocator here! (Like
+                ability to add metafields)
               </Text>
             </Card>
           </Layout.Section>
