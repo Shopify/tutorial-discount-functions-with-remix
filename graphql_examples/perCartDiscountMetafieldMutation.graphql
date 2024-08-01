@@ -1,14 +1,18 @@
 # [START discount-allocator.per-cart-discount-metafield-mutation]
 mutation {
-  metafieldsSet(metafields: [
-    {
-      key: "per-cart-cap",
-      namespace: "testing-app-allocator",
-      ownerId: "gid://shopify/Shop/<SHOP_ID>",
-      type: "number_decimal",
-      value: "<PER_CART_CAP>"
-    }
-  ]) {
+  metafieldsSet(
+    metafields: [
+      # [START discount-allocator.replace-placeholders]
+      {
+        key: "per-cart-cap"
+        namespace: "testing-app-allocator"
+        ownerId: "gid://shopify/Shop/<SHOP_ID>"
+        type: "number_decimal"
+        value: "<PER_CART_CAP>"
+      }
+      # [END discount-allocator.replace-placeholders]
+    ]
+  ) {
     metafields {
       key
       namespace
