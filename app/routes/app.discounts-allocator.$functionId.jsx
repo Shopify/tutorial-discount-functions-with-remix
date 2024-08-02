@@ -1,10 +1,11 @@
-// [START discounts-allocator.ui-configuration]
+// [START discounts-allocator.add-ui]
 import { useEffect } from "react";
 import { json } from "@remix-run/node";
 import { useActionData, useNavigate, useSubmit } from "@remix-run/react";
 import { Page, Layout, BlockStack, Card, Banner, Text } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 
+// [START discounts-allocator.action]
 export const action = async ({ params, request }) => {
   const functionExtensionId = params.functionId;
 
@@ -38,11 +39,13 @@ export const action = async ({ params, request }) => {
 
   return json({ errors: ["No functionExtensionId provided"] });
 };
+// [END discounts-allocator.action]
 
 export default function DiscountsAllocator() {
   const actionData = useActionData();
-
+  // [START discounts-allocator.ui-configuration]
   const submitForm = useSubmit();
+  // [END discounts-allocator.ui-configuration]
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -68,6 +71,7 @@ export default function DiscountsAllocator() {
     </Layout.Section>
   ) : null;
 
+  // [START discounts-allocator.ui-configuration]
   const actions = {
     backAction: {
       content: "Home",
@@ -78,8 +82,10 @@ export default function DiscountsAllocator() {
       onAction: () => submitForm({}, { method: "post" }),
     },
   };
+  // [END discounts-allocator.ui-configuration]
 
   return (
+    // [START discounts-allocator.ui-configuration]
     <Page title="Register Discounts Allocator Function" {...actions}>
       <BlockStack gap="500">
         <Layout>
@@ -95,6 +101,7 @@ export default function DiscountsAllocator() {
         </Layout>
       </BlockStack>
     </Page>
+    // [END discounts-allocator.ui-configuration]
   );
 }
-// [END discounts-allocator.ui-configuration]
+// [END discounts-allocator.add-ui]
