@@ -1,19 +1,16 @@
 # [START discounts-allocator.shop-metafield-defination-configuration]
 mutation {
-  metafieldDefinitionCreate(definition: {
-    name: "Maximum Discount Per Cart",
-    namespace: "testing-app-allocator",
-    key: "per-cart-cap",
-    type: "number_decimal",
-    description: "The Maximum discount value applied to a single cart",
-    validations: [
-      {
-        name: "min",
-        value: "0"
-      }
-    ],
-    ownerType: "SHOP"
-  }) {
+  metafieldDefinitionCreate(
+    definition: {
+      name: "Maximum Discount Per Cart"
+      namespace: "testing-app-allocator"
+      key: "per-cart-cap"
+      type: "number_decimal"
+      description: "The Maximum discount value applied to a single cart"
+      validations: [{ name: "min", value: "0" }]
+      ownerType: SHOP
+    }
+  ) {
     createdDefinition {
       id
       name
