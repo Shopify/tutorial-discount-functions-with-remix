@@ -2,7 +2,7 @@ import { json } from "@remix-run/node";
 import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 // [START build-the-ui.render-the-provider]\
-import { DiscountProvider } from "../components/DiscountProvider";
+import { AppProvider as DiscountProvider } from "@shopify/discount-app-components";
 // [END build-the-ui.render-the-provider]
 import { boundary } from "@shopify/shopify-app-remix/server";
 import { AppProvider } from "@shopify/shopify-app-remix/react";
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       {/* [START build-the-ui.render-the-provider] */}
-      <DiscountProvider>
+      <DiscountProvider locale="en-US" ianaTimezone="America/Toronto">
         <ui-nav-menu>
           <Link to="/app" rel="home">
             Home
