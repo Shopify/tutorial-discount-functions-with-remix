@@ -27,7 +27,7 @@ export const action = async ({ params, request }) => {
 
     const response = await admin.graphql(registerDiscountsAllocatorMutation, {
       variables: {
-        functionExtensionId: JSON.parse(functionExtensionId),
+        functionExtensionId: functionExtensionId,
       },
     });
 
