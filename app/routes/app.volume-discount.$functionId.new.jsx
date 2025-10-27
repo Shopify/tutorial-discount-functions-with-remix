@@ -1,14 +1,8 @@
 // [START build-the-ui.create-the-ui]
 import { useEffect, useMemo } from "react";
-import { json } from "@remix-run/node";
 import { useForm, useField } from "@shopify/react-form";
 import { CurrencyCode } from "@shopify/react-i18n";
-import {
-  Form,
-  useActionData,
-  useNavigation,
-  useSubmit,
-} from "@remix-run/react";
+import { Form, useActionData, useNavigation, useSubmit } from "react-router";
 import {
   ActiveDatesCard,
   CombinationCard,
@@ -21,15 +15,15 @@ import {
   UsageLimitsCard,
 } from "@shopify/discount-app-components";
 import {
-  Banner,
-  Card,
-  Text,
-  Layout,
+  Box,
   Page,
   PageActions,
   TextField,
   BlockStack,
-  Box,
+  Card,
+  Text,
+  Layout,
+  Banner,
 } from "@shopify/polaris";
 
 import shopify from "../shopify.server";
@@ -108,7 +102,7 @@ export const action = async ({ params, request }) => {
 
     const errors = responseJson.data.discountCreate?.userErrors;
     const discount = responseJson.data.discountCreate?.codeAppDiscount;
-    return json({ errors, discount: { ...discount, functionId } });
+    return { errors, discount: { ...discount, functionId } };
   } else {
     const response = await admin.graphql(
       `#graphql
@@ -136,7 +130,7 @@ export const action = async ({ params, request }) => {
 
     const responseJson = await response.json();
     const errors = responseJson.data.discountCreate?.userErrors;
-    return json({ errors });
+    return { errors };
   }
 };
 // [END build-the-ui.add-action]

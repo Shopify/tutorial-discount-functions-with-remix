@@ -1,14 +1,8 @@
 // [START order-discount.ui-configuration]
-import { useEffect, useMemo } from "react";
-import { json } from "@remix-run/node";
+import { useMemo } from "react";
 import { useForm, useField } from "@shopify/react-form";
 import { CurrencyCode } from "@shopify/react-i18n";
-import {
-  Form,
-  useActionData,
-  useNavigation,
-  useSubmit,
-} from "@remix-run/react";
+import { Form, useActionData, useNavigation, useSubmit } from "react-router";
 import {
   ActiveDatesCard,
   CombinationCard,
@@ -21,14 +15,14 @@ import {
   UsageLimitsCard,
 } from "@shopify/discount-app-components";
 import {
+  Layout,
   Banner,
+  Page,
+  BlockStack,
   Card,
   Text,
-  Layout,
-  Page,
-  PageActions,
   TextField,
-  BlockStack,
+  PageActions,
 } from "@shopify/polaris";
 
 import shopify from "../shopify.server";
@@ -104,7 +98,7 @@ export const action = async ({ params, request }) => {
 
     const responseJson = await response.json();
     const errors = responseJson.data.discountCreate?.userErrors;
-    return json({ errors });
+    return { errors };
   } else {
     const response = await admin.graphql(
       `#graphql
@@ -139,7 +133,7 @@ export const action = async ({ params, request }) => {
 
     const responseJson = await response.json();
     const errors = responseJson.data.discountCreate?.userErrors;
-    return json({ errors });
+    return { errors };
   }
 };
 // [END build-the-ui.add-action]
@@ -209,12 +203,12 @@ export default function MinimumSubtotalNew() {
         appliesOncePerCustomer: form.appliesOncePerCustomer,
         startsAt: form.startDate,
         endsAt: form.endDate,
-      // [START build-the-ui.add-configuration]
+        // [START build-the-ui.add-configuration]
         configuration: {
           minimumAmount: parseInt(form.configuration.minimumAmount),
           percentage: parseFloat(form.configuration.percentage),
         },
-      // [END build-the-ui.add-configuration]
+        // [END build-the-ui.add-configuration]
       };
 
       submitForm({ discount: JSON.stringify(discount) }, { method: "post" });
