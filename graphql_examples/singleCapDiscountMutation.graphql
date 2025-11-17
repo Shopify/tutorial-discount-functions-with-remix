@@ -4,8 +4,8 @@ mutation {
     metafields: [
       # [START discount-allocator.replace-placeholders]
       {
-        key: "single-discount-cap"
-        namespace: "testing-app-allocator"
+        key: "single_discount_cap"
+        namespace: "$app"
         ownerId: "gid://shopify/DiscountNode/<DISCOUNT_ID>"
         type: "number_decimal"
         value: "<SINGLE_DISCOUNT_CAP>"
