@@ -29,7 +29,7 @@ api_version = "2024-07"
 [pos]
 embedded = false
 
-# tag::discount-allocator.metafield-definitions::
+# [START discount-allocator.metafield-definitions]
 [discount.metafields.app.single_discount_cap]
 name = "Single Discount Cap"
 description = "Maximum reduction value for a single discount"
@@ -41,4 +41,4 @@ name = "Maximum Discount Per Cart"
 description = "Maximum discount value applied to a single cart"
 type = "number_decimal"
 validations.min = 0
-# end::discount-allocator.metafield-definitions::
+# [END discount-allocator.metafield-definitions[
