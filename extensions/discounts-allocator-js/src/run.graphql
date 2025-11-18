@@ -24,7 +24,7 @@ query RunInput {
         quantity
       }
     }
-    metafield(namespace: "testing-app-allocator", key: "single-discount-cap") {
+    metafield(namespace: "$app", key: "single_discount_cap") {
       value
     }
   }
@@ -52,7 +52,7 @@ query RunInput {
     }
   }
   shop {
-    metafield(namespace: "testing-app-allocator", key: "per-cart-cap") {
+    metafield(namespace: "$app", key: "per_cart_cap") {
       value
     }
   }
