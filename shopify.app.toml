@@ -41,4 +41,4 @@ name = "Maximum Discount Per Cart"
 description = "Maximum discount value applied to a single cart"
 type = "number_decimal"
 validations.min = 0
-# [END discount-allocator.metafield-definitions[
+# [END discount-allocator.metafield-definitions]
