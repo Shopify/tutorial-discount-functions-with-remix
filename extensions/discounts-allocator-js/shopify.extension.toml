@@ -5,6 +5,7 @@ handle = "discounts-allocator-js"
 name = "t:name"
 description = "t:description"
 type = "function"
+uid = "ccf7edf4-a12d-b60a-9d4a-1cb8691864d6ec6a83e2"
 
   [[extensions.targeting]]
   target = "purchase.discounts-allocator.run"
