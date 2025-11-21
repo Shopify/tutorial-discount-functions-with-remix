@@ -1,8 +1,7 @@
 // [START discounts-allocator.add-ui]
 import { useEffect } from "react";
-import { json } from "@remix-run/node";
-import { useActionData, useNavigate, useSubmit } from "@remix-run/react";
-import { Page, Layout, BlockStack, Card, Banner, Text } from "@shopify/polaris";
+import { useActionData, useNavigate, useSubmit } from "react-router";
+import { Banner, Card, Text, Layout, Page, BlockStack } from "@shopify/polaris";
 import { authenticate } from "../shopify.server";
 
 // [START discounts-allocator.action]
@@ -34,10 +33,10 @@ export const action = async ({ params, request }) => {
     const responseJson = await response.json();
     const errors =
       responseJson.data.discountsAllocatorFunctionRegister?.userErrors;
-    return json({ errors });
+    return { errors };
   }
 
-  return json({ errors: ["No functionExtensionId provided"] });
+  return { errors: ["No functionExtensionId provided"] };
 };
 // [END discounts-allocator.action]
 
