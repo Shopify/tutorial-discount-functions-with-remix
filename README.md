@@ -1,3 +1,5 @@
+> **This repository is no longer maintained.** It has been archived and receives no updates or security fixes. For the current discount tutorials, see [discounts-reference-app](https://github.com/Shopify/discounts-reference-app).
+
 # Shopify app tutorial with admin extensions
 
 This app is a guide for adding extensions to a Shopify app.
